@@ -25,7 +25,16 @@ const App = async () => {
     transports: [
       webTransport(),
       webSockets(),
-      webRTC(),
+      webRTC({
+        rtcConfiguration: {
+          iceServers: [
+            {
+              // STUN servers help the browser discover its own public IPs
+              urls: ['stun:stun.l.google.com:19302', 'stun:global.stun.twilio.com:3478'],
+            }
+          ]
+        }
+      }),
       circuitRelayTransport({
         discoverRelays: 1
       })
@@ -72,4 +81,3 @@ const App = async () => {
 App().catch(err => {
   console.error(err) // eslint-disable-line no-console
 })
-
