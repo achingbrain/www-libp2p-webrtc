@@ -17,6 +17,7 @@
     "@chainsafe/libp2p-yamux": "^6.0.2",
     "@libp2p/bootstrap": "^10.1.0",
     "@libp2p/circuit-relay-v2": "^1.1.0",
+    "@libp2p/devtools-metrics": "^0.2.0",
     "@libp2p/identify": "^2.1.0",
     "@libp2p/kad-dht": "^12.1.0",
     "@libp2p/webrtc": "^4.1.0",

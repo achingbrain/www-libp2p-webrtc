@@ -8,6 +8,7 @@ import { kadDHT, removePrivateAddressesMapper } from '@libp2p/kad-dht'
 import { webTransport } from '@libp2p/webtransport'
 import { webSockets } from '@libp2p/websockets'
 import { bootstrap } from '@libp2p/bootstrap'
+import { devToolsMetrics } from '@libp2p/devtools-metrics'
 
 const App = async () => {
   const DOM = {
@@ -45,6 +46,7 @@ const App = async () => {
         ]
       })
     ],
+    metrics: devToolsMetrics(),
     services: {
       identify: identify(),
       kadDHT: kadDHT({
