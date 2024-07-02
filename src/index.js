@@ -25,16 +25,7 @@ const App = async () => {
     transports: [
       webTransport(),
       webSockets(),
-      webRTC({
-        rtcConfiguration: {
-          iceServers: [
-            {
-              // STUN servers help the browser discover its own public IPs
-              urls: ['stun:stun.l.google.com:19302', 'stun:global.stun.twilio.com:3478'],
-            }
-          ]
-        }
-      }),
+      webRTC(),
       circuitRelayTransport({
         discoverRelays: 1
       })
